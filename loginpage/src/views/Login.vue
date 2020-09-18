@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Model from "../components/Model.vue"
+    import Model from "../components/RegisterModel.vue"
 
     export default {
         name: "Login",
@@ -14,7 +14,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
