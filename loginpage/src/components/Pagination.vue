@@ -28,7 +28,9 @@
         data() {
             return {
                 currentPage: 1,
-                pageList: [1, 2, 3, 4, 5, 6, 7]
+                pageList: [1, 2, 3, 4, 5, 6, 7],
+                pageSize:5,
+                resetPage:false
             }
         },
         methods: {

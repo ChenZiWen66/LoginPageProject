@@ -4,14 +4,16 @@
         <div><PanelTable/></div>
         <br/>
         <div><Pagination/></div>
+        <div><PageSize/></div>
     </div>
 </template>
 <script>
     import Pagination from "../components/Pagination";
     import PanelTable from "../components/PanelTable";
+    import PageSize from "../components/PageSize";
     export default {
         components:{
-            PanelTable,Pagination
+            PanelTable,Pagination,PageSize
         }
     }
 </script>

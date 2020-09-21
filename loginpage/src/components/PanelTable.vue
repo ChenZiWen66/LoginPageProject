@@ -24,7 +24,6 @@
 
 <script>
     import message from "./message";
-
     export default {
         name: "PanelTable",
         data(){
@@ -49,6 +48,9 @@
             message.$on("userInfoCurrentPage",function (currentpage) {
                 _this.currentPage=currentpage;
             });
+            message.$on("userInfoPageSize",function (pageSize) {
+                _this.pageSize=pageSize;
+            });
         },
         watch:{
             currentPage(){
@@ -56,7 +58,9 @@
                 this.getInfo();
                 },
             pageSize(){
-                alert("表格大小改变了"+this.pageSize)
+                alert("表格大小改变了"+this.pageSize);
+                this.currentPage=1;
+                this.getInfo();
             }
         }
     }
