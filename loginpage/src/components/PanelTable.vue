@@ -30,17 +30,18 @@
         data(){
             this.getInfo();
             return{
-                currentPage:Number(1),
-                pageSize:Number(1),
+                currentPage:1,
+                pageSize:7,
                 userInfo:[]
             }
         },
         methods:{
             getInfo:function () {
+                console.log(this.currentPage);
+                console.log(this.pageSize);
                 let _this=this;
-                this.$http.get("http://localhost:9002/crud/show").then(function (response) {
-                    // console.log(response.data);
-                    // this.userInfo=response.data;
+                this.$http.post("http://localhost:9002/crud/show",{currentPage:2,pageSize:6})
+                    .then(function (response) {
                     _this.userInfo=response.data;
                 });
             }
@@ -56,6 +57,7 @@
         watch:{
             currentPage(){
                 alert("当前页面改变了:"+this.currentPage);
+                // this.getInfo();
                 },
             pageSize(){
                 alert("表格大小改变了"+this.pageSize)
