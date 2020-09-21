@@ -4,6 +4,7 @@
       <w>axios</w>
       <w>passwordconfirm</w>
       <w>registermodel</w>
+      <w>userinfo</w>
     </words>
   </dictionary>
 </component>
