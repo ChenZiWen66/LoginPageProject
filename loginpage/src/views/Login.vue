@@ -30,7 +30,6 @@
         methods:{
             userLogin(){
                 let _this=this;
-                // alert("用户名:"+_this.userName+"密码:"+_this.password+"密码确认:"+_this.passwordconfirm);
                 this.$http.post("http://localhost:9005/user/login",{userName:_this.userName,password:_this.password})
                     .then(function (response){
                         alert("返回结果："+response.toString());
