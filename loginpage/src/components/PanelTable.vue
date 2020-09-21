@@ -28,19 +28,16 @@
     export default {
         name: "PanelTable",
         data(){
-            this.getInfo();
             return{
-                currentPage:1,
-                pageSize:7,
+                currentPage:Number(1),
+                pageSize:Number(5),
                 userInfo:[]
             }
         },
         methods:{
-            getInfo:function () {
-                console.log(this.currentPage);
-                console.log(this.pageSize);
+            getInfo() {
                 let _this=this;
-                this.$http.post("http://localhost:9002/crud/show",{currentPage:2,pageSize:6})
+                this.$http.post("http://localhost:9002/crud/show",{currentPage:_this.currentPage,pageSize:_this.pageSize})
                     .then(function (response) {
                     _this.userInfo=response.data;
                 });
@@ -48,16 +45,15 @@
         },
         mounted:function () {
             let _this=this;
+            _this.getInfo();
             message.$on("userInfoCurrentPage",function (currentpage) {
-                // console.log("接收数据{}",currentpage);
                 _this.currentPage=currentpage;
-                // alert("当前页面改变了"+currentpage);
             });
         },
         watch:{
             currentPage(){
-                alert("当前页面改变了:"+this.currentPage);
-                // this.getInfo();
+                // alert("当前页面改变了:"+this.currentPage);
+                this.getInfo();
                 },
             pageSize(){
                 alert("表格大小改变了"+this.pageSize)
