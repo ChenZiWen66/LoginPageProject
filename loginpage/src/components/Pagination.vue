@@ -7,8 +7,9 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li v-for="Page in pageList" v-bind:class="{'active':currentPage===Page}" @click="alterPage(Page)"><a
-                        href="#">{{Page}}</a></li>
+                <li v-for="Page in pageList" v-bind:class="{'active':currentPage===Page}" @click="alterPage(Page)">
+                    <a href="#">{{Page}}</a>
+                </li>
                 <li @click="nextPage">
                     <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
