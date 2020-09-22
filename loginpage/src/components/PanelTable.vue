@@ -58,7 +58,7 @@
                 this.getInfo();
                 },
             pageSize(){
-                alert("表格大小改变了"+this.pageSize);
+                // alert("表格大小改变了"+this.pageSize);
                 this.currentPage=1;
                 this.getInfo();
             }

@@ -29,8 +29,7 @@
             return {
                 currentPage: 1,
                 pageList: [1, 2, 3, 4, 5, 6, 7],
-                pageSize:5,
-                resetPage:false
+                pageSize: 5
             }
         },
         methods: {
@@ -43,13 +42,24 @@
                 if (this.currentPage > 1) {
                     this.currentPage = this.currentPage - 1
                 }
-                message.$emit('userInfoCurrentPage',this.currentPage)
+                message.$emit('userInfoCurrentPage', this.currentPage)
             },
-            nextPage:function () {
-                if(this.currentPage<7){
-                    this.currentPage=this.currentPage+1
+            nextPage: function () {
+                if (this.currentPage < 7) {
+                    this.currentPage = this.currentPage + 1
                 }
-                message.$emit('userInfoCurrentPage',this.currentPage);
+                message.$emit('userInfoCurrentPage', this.currentPage);
+            }
+        },
+        mounted: function () {
+            let _this = this;
+            message.$on("userInfoPageSize", function (callback) {
+                _this.pageSize = callback;
+            })
+        },
+        watch: {
+            pageSize() {
+                this.currentPage = 1;
             }
         }
     }

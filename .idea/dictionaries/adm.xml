@@ -2,6 +2,7 @@
   <dictionary name="adm">
     <words>
       <w>axios</w>
+      <w>currentpage</w>
       <w>passwordconfirm</w>
       <w>registermodel</w>
       <w>userinfo</w>
