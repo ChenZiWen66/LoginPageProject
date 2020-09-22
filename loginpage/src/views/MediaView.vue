@@ -1,6 +1,11 @@
 <template>
     <div>
-        <Navigation/>
+        <div>
+            <Navigation/>
+        </div>
+        <div>
+            <router-view/>
+        </div>
     </div>
 </template>
 <script>

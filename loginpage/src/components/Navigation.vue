@@ -2,13 +2,13 @@
     <div>
         <ul class="nav nav-pills">
             <li role="presentation" :class="{'active':sheet==='Home'}" @click="setSheet('Home')">
-                <a href="#">Home</a>
+                <router-link to="/media/img">Home</router-link>
             </li>
-            <li role="presentation" :class="{'active':sheet==='Profile'}" @click="setSheet('Profile')">
-                <a href="#">Profile</a>
+            <li role="presentation" :class="{'active':sheet==='Image'}" @click="setSheet('Image')">
+                <router-link to="/media/img">图片</router-link>
             </li>
-            <li role="presentation" :class="{'active':sheet==='Message'}" @click="setSheet('Message')">
-                <a href="#">Messages</a>
+            <li role="presentation" :class="{'active':sheet==='Video'}" @click="setSheet('Video')">
+                <router-link to="/media/video">视频</router-link>
             </li>
         </ul>
     </div>

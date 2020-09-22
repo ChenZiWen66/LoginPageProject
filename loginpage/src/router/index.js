@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import ShowUserInfo from "../views/ShowUserInfo.vue";
 import MediaView from "../views/MediaView.vue";
+import ImagePage from "../views/ImagePage";
+import VideoPage from "../views/VideoPage";
 
 Vue.use(VueRouter);
 
@@ -20,7 +22,18 @@ const routes = [
   {
     path:'/media',
     name:'Mediaview',
-    component:MediaView
+    component:MediaView,
+    children:[
+      {
+        path:'/media/img',
+        name:'ImagePage',
+        component:ImagePage
+      },{
+        path:'/media/video',
+        name:'VideoPage',
+        component:VideoPage
+      }
+    ]
   }
 ];
 
