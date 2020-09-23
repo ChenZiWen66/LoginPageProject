@@ -5,6 +5,7 @@ import ShowUserInfo from "../views/ShowUserInfo.vue";
 import MediaView from "../views/MediaView.vue";
 import ImagePage from "../views/ImagePage";
 import VideoPage from "../views/VideoPage";
+import Bootstraptest from "../views/Bootstraptest";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ const routes = [
         component:VideoPage
       }
     ]
+  },
+  {
+    path:'/test',
+    name:'Test',
+    component:Bootstraptest
   }
 ];
 
